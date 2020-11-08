@@ -41,7 +41,7 @@ greetings = ('здравствуй', 'привет', 'ку', 'здорово')
 now = datetime.now()
 
 def main():
-    greet_bot.start_update_in_loop(1)
+    greet_bot.start_update_in_loop(60)
 
 if __name__ == '__main__':
     try:
