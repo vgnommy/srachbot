@@ -15,9 +15,10 @@ class BotHandler:
 
     def start_update_in_loop(self, loopTime):
         while True:
+            print('before')
             updated_data = self.get_updates()
             print('y', updated_data)
-            if updated_data:
+            if updated_data['result']:
                 updated_result = updated_data['result']
                 self.offset = updated_result[-1]['update_id'] + 1
                 print('lastDta', updated_data)
@@ -46,7 +47,8 @@ greetings = ('здравствуй', 'привет', 'ку', 'здорово')
 now = datetime.now()
 
 def main():
-    greet_bot.start_update_in_loop(30)
+    print('main')
+    greet_bot.start_update_in_loop(1)
 
 if __name__ == '__main__':
     try:
